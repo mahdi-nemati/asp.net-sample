@@ -13,6 +13,9 @@ namespace Endpoint.Infastructure
 
             CreateMap<TeacherRequest, Teacher>().ReverseMap();
             CreateMap<TeacherResponse, Teacher>().ReverseMap();
+
+            CreateMap<CourseResponse, Course>().ReverseMap();
+            CreateMap<CourseRequest, Course>().ReverseMap();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ApplicationServices;
 using DAL;
 using Endpoint.CategoryEndpoint;
+using Endpoint.Endpoint;
 using Endpoint.Infastructure;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
@@ -17,6 +18,7 @@ namespace Endpoint.Extentions
             // services
             builder.Services.AddScoped<CategoryServices>();
             builder.Services.AddScoped<TeacherService>();
+            builder.Services.AddScoped<CourseServices>();
             builder.Services.AddScoped<IFileAdapter, LocalFileStorageAdapter>();
             builder.Services.AddOutputCache();
             builder.Services.AddOpenApi();
@@ -47,6 +49,9 @@ namespace Endpoint.Extentions
 
             // regester teacher
             app.MapTeacher("/teachers");
+
+            // regester course
+            app.MapCourse("/course");
 
             return app;
         }

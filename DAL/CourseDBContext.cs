@@ -22,6 +22,7 @@ namespace DAL
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Course> Course { get; set; }
 
     }
 }
